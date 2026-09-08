@@ -329,8 +329,8 @@ a:hover {
 }
 
 .content-shell.content-shell--lecture .content-meta {
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
+  padding-top: 0.9rem;
+  padding-bottom: 0.9rem;
   font-size: 2.8rem;
   line-height: 1.05;
   color: #ffff66;
@@ -338,24 +338,24 @@ a:hover {
 }
 
 .content-shell.content-shell--tutorial .content-meta {
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
+  padding-top: 0.9rem;
+  padding-bottom: 0.9rem;
   font-size: 2.8rem;
   line-height: 1.05;
   background: #c084ff;
 }
 
 .content-shell.content-shell--overview .content-meta {
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
+  padding-top: 0.9rem;
+  padding-bottom: 0.9rem;
   font-size: 2.8rem;
   line-height: 1.05;
   background: #16a34a;
 }
 
 .content-meta.content-meta--lecture {
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
+  padding-top: 0.9rem;
+  padding-bottom: 0.9rem;
   font-size: 2.8rem;
   line-height: 1.05;
   color: #ffffff;
@@ -371,8 +371,8 @@ a:hover {
 }
 
 .content-meta.content-meta--tutorial {
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
+  padding-top: 0.9rem;
+  padding-bottom: 0.9rem;
   font-size: 2.8rem;
   line-height: 1.05;
   color: #ffffff;
@@ -388,8 +388,8 @@ a:hover {
 }
 
 .content-meta.content-meta--overview {
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
+  padding-top: 0.9rem;
+  padding-bottom: 0.9rem;
   font-size: 2.8rem;
   line-height: 1.05;
   color: #ffffff;
@@ -545,8 +545,8 @@ body.content-page .page-title {
 .content-page-area h2,
 .content-page-area h3,
 .content-page-area h4 {
-  margin-top: 0.35rem;
-  margin-bottom: 0.2rem;
+  margin-top: 0.15rem;
+  margin-bottom: 0.1rem;
   line-height: 1.2;
 }
 
@@ -747,7 +747,7 @@ body.content-page .page-title {
 
 .accordion > summary {
   cursor: pointer;
-  padding: 0.9rem 1rem;
+  padding: 0.55rem 1rem;
   font-weight: 700;
   font-size: 1.4rem;
   list-style: none;
@@ -1442,12 +1442,14 @@ body.content-page .page-title {
 
   .content-shell.content-shell--lecture .content-meta,
   .content-shell.content-shell--tutorial .content-meta,
+  .content-shell.content-shell--overview .content-meta,
   .content-meta.content-meta--lecture,
-  .content-meta.content-meta--tutorial {
+  .content-meta.content-meta--tutorial,
+  .content-meta.content-meta--overview {
     font-size: clamp(1.3rem, 6.1vw, 1.85rem);
     line-height: 1.12;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
   }
 
   .module-header p {
