@@ -75,7 +75,7 @@
     "slide_number": 9,
     "title": "",
     "content": [
-      "Unity3D Install \nMust have personal account – free for our purposes\nCan have multiple versions installed – Via Unity Hub\nSome Unity Hub Tutorials are in 2020.3f\nModule Uses 6000.0.55f1 – it is the only version supported for the duration of the module in order to minimise issues\nProjects must Use 6000.0.55f1 \nMust open projects in correct versions\n\nCan work online or offline – login helps consolidate projects and\nHub DesktopSettings between machines, especially if using Github Website",
+      "Unity3D Install \nMust have personal account – free for our purposes\nCan have multiple versions installed – Via Unity Hub\nSome Unity Hub Tutorials are in 2020.3f\nModule Uses 6000.3.19f1 – it is the only version supported for the duration of the module in order to minimise issues\nProjects must Use 6000.3.19f1 \nMust open projects in correct versions\n\nCan work online or offline – login helps consolidate projects and\nHub DesktopSettings between machines, especially if using Github Website",
       "3D Interactive Media Development"
     ],
     "images": []
@@ -363,7 +363,7 @@
     "slide_number": 41,
     "title": "",
     "content": [
-      "Working in Unity\n\nCreate Login if needed, but can work offline\nDownload and Use Unity 6000.0.55f for duration of Module",
+      "Working in Unity\n\nCreate Login if needed, but can work offline\nDownload and Use Unity 6000.3.19f1 for duration of Module",
       "3D Interactive Media Development"
     ],
     "images": []

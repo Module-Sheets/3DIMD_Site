@@ -186,7 +186,7 @@ def build_software_section(slide):
           "https://id.unity.com/en/conversations/501975b1-9ab1-4599-b9f1-72fa4235b61d01bf",
           "https://unity.com/products/unity-student?currency=EUR",
           "Download Unity Hub by clicking the Unity Hub button at https://store.unity.com/download-nuo",
-          "Download Unity version 6000.0.55f1 at: https://unity3d.com/get-unity/download/archive",
+          "Download Unity version 6000.3.19f1 at: https://unity3d.com/get-unity/download/archive",
         ],
       ),
       (
