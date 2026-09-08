@@ -382,6 +382,58 @@
     link.getAttribute("data-page") || link.getAttribute("href")
   );
 
+  const getKnownInternalLinks = () => Array.from(
+    document.querySelectorAll(".nav-rail a, #home-content a")
+  );
+
+  const getKnownInternalLink = (pageKey) => {
+    const normalizedKey = normalizePageKey(pageKey || "");
+    if (!normalizedKey || normalizedKey === "home" || !normalizedKey.startsWith("pages/")) return null;
+    return getKnownInternalLinks().find((link) => getLinkKey(link) === normalizedKey) || null;
+  };
+
+  const getPageKeyFromUrl = () => {
+    try {
+      return normalizePageKey(new URL(window.location.href).searchParams.get("page") || "");
+    } catch {
+      return "";
+    }
+  };
+
+  const setUrlPageKey = (pageKey, replace = false) => {
+    if (!window.history?.pushState || !window.history?.replaceState) return;
+    try {
+      const url = new URL(window.location.href);
+      const params = new URLSearchParams(url.search);
+      const normalizedKey = normalizePageKey(pageKey || "");
+      if (!normalizedKey || normalizedKey === "home") {
+        params.delete("page");
+      } else {
+        params.set("page", normalizedKey);
+      }
+      const query = Array.from(params.entries())
+        .map(([key, value]) => key === "page" ? `${key}=${value}` : `${key}=${encodeURIComponent(value)}`)
+        .join("&");
+      url.search = query ? `?${query}` : "";
+      window.history[replace ? "replaceState" : "pushState"](
+        { page: normalizedKey || "home" },
+        "",
+        `${url.pathname}${url.search}${url.hash}`
+      );
+    } catch {
+      // Ignore History API issues in restricted contexts.
+    }
+  };
+
+  const setFramePageSource = (pageKey) => {
+    if (!frame) return;
+    try {
+      frame.contentWindow.location.replace(new URL(pageKey, window.location.href).href);
+    } catch {
+      frame.src = pageKey;
+    }
+  };
+
   const getSidebarLabelForPageKey = (pageKey) => {
     const normalizedKey = normalizePageKey(pageKey || "");
     const sidebarLink = links.find((item) => getLinkKey(item) === normalizedKey);
@@ -584,8 +636,9 @@
     }
   };
 
-  const loadHome = () => {
+  const loadHome = (options = {}) => {
     if (!frame || !home) return;
+    const { updateUrl = false, replaceUrl = false } = options;
     currentPageKey = "home";
     currentPageLabel = "Home";
     currentSlideTitle = "";
@@ -604,13 +657,17 @@
     document.title = "3DIMD Course Site";
     setActiveLink("home");
     saveNavState("home");
+    if (updateUrl) {
+      setUrlPageKey("home", replaceUrl);
+    }
   };
 
-  const loadPage = (link) => {
+  const loadPage = (link, options = {}) => {
     if (!frame || !home || !link) return;
+    const { updateUrl = false, replaceUrl = false } = options;
     const pageKey = getLinkKey(link);
     if (!pageKey || pageKey === "home") {
-      loadHome();
+      loadHome({ updateUrl, replaceUrl });
       return;
     }
 
@@ -647,7 +704,7 @@
       meta?.classList.remove("content-meta--overview");
       setMeta(label);
     }
-    frame.src = currentSourcePageKey;
+    setFramePageSource(currentSourcePageKey);
     frame.style.display = "block";
     home.hidden = true;
 
@@ -658,6 +715,9 @@
     document.title = `3DIMD | ${label}`;
     setActiveLink(pageKey);
     saveNavState(pageKey);
+    if (updateUrl) {
+      setUrlPageKey(pageKey, replaceUrl);
+    }
     const navGroup = link.closest(".nav-group")?.dataset.navGroup || getNavGroupForPageKey(pageKey);
     if (navGroup) {
       setNavGroupExpanded(navGroup, true);
@@ -667,6 +727,17 @@
 
   const restoreActiveState = () => {
     try {
+      const urlPageKey = getPageKeyFromUrl();
+      if (urlPageKey) {
+        const urlLink = getKnownInternalLink(urlPageKey);
+        if (urlLink) {
+          loadPage(urlLink, { updateUrl: true, replaceUrl: true });
+        } else {
+          loadHome({ updateUrl: true, replaceUrl: true });
+        }
+        return;
+      }
+
       const activeKey = normalizePageKey(sessionStorage.getItem(NAV_ACTIVE_KEY) || "home");
       if (!activeKey || activeKey === "home") {
         loadHome();
@@ -689,7 +760,7 @@
     link.addEventListener("click", (event) => {
       if (!frame || !home) return;
       event.preventDefault();
-      loadPage(link);
+      loadPage(link, { updateUrl: true });
     });
   });
 
@@ -705,9 +776,24 @@
       if (!pageKey || !pageKey.startsWith("pages/")) return;
 
       event.preventDefault();
-      loadPage(link);
+      loadPage(link, { updateUrl: true });
     });
   }
+
+  window.addEventListener("popstate", () => {
+    const pageKey = getPageKeyFromUrl();
+    if (!pageKey) {
+      loadHome();
+      return;
+    }
+
+    const link = getKnownInternalLink(pageKey);
+    if (link) {
+      loadPage(link);
+    } else {
+      loadHome({ updateUrl: true, replaceUrl: true });
+    }
+  });
 
   if (nav) {
     nav.addEventListener("scroll", () => {
