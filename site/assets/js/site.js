@@ -484,7 +484,7 @@
       }
     });
 
-    if (window.matchMedia("(max-width: 960px)").matches) {
+    if (window.matchMedia("(max-width: 1200px)").matches) {
       const active = nav?.querySelector('a[aria-current="page"]');
       if (active instanceof HTMLElement) {
         requestAnimationFrame(() => {
@@ -801,7 +801,7 @@
     }, { passive: true });
 
     window.addEventListener("resize", () => {
-      if (!window.matchMedia("(max-width: 960px)").matches) return;
+      if (!window.matchMedia("(max-width: 1200px)").matches) return;
       const active = nav.querySelector('a[aria-current="page"]');
       if (active instanceof HTMLElement) {
         active.scrollIntoView({
