@@ -1149,22 +1149,26 @@ body.content-page .page-title {
 }
 
 .pseudo-panel--compact .pseudo-panel__chrome,
-.code-panel--compact .pseudo-panel__chrome {
+.code-panel--compact .pseudo-panel__chrome,
+.code-panel--compact .code-panel__chrome {
   padding: 0.55rem 0.75rem;
 }
 
 .pseudo-panel--compact .pseudo-panel__title,
-.code-panel--compact .pseudo-panel__title {
+.code-panel--compact .pseudo-panel__title,
+.code-panel--compact .code-panel__title {
   font-size: 0.8rem;
 }
 
 .pseudo-panel--compact .pseudo-panel__body,
-.code-panel--compact .pseudo-panel__body {
+.code-panel--compact .pseudo-panel__body,
+.code-panel--compact .code-panel__body {
   padding: 0.7rem 0.8rem 0.8rem;
 }
 
 .pseudo-panel--compact .pseudo-panel__line,
-.code-panel--compact .pseudo-panel__line {
+.code-panel--compact .pseudo-panel__line,
+.code-panel--compact .code-panel__line {
   font-size: 0.9rem;
   line-height: 1.25;
 }
@@ -1245,32 +1249,44 @@ body.content-page .page-title {
   white-space: normal;
 }
 
-.pseudo-panel__line.indent-level-0 { --pseudo-indent-level: 0; }
-.pseudo-panel__line.indent-level-1 { --pseudo-indent-level: 1; }
-.pseudo-panel__line.indent-level-2 { --pseudo-indent-level: 2; }
-.pseudo-panel__line.indent-level-3 { --pseudo-indent-level: 3; }
-.pseudo-panel__line.indent-level-4 { --pseudo-indent-level: 4; }
-.pseudo-panel__line.indent-level-5 { --pseudo-indent-level: 5; }
-.pseudo-panel__line.indent-level-6 { --pseudo-indent-level: 6; }
+.pseudo-panel__line.indent-level-0,
+.code-panel__line.indent-level-0 { --pseudo-indent-level: 0; }
+.pseudo-panel__line.indent-level-1,
+.code-panel__line.indent-level-1 { --pseudo-indent-level: 1; }
+.pseudo-panel__line.indent-level-2,
+.code-panel__line.indent-level-2 { --pseudo-indent-level: 2; }
+.pseudo-panel__line.indent-level-3,
+.code-panel__line.indent-level-3 { --pseudo-indent-level: 3; }
+.pseudo-panel__line.indent-level-4,
+.code-panel__line.indent-level-4 { --pseudo-indent-level: 4; }
+.pseudo-panel__line.indent-level-5,
+.code-panel__line.indent-level-5 { --pseudo-indent-level: 5; }
+.pseudo-panel__line.indent-level-6,
+.code-panel__line.indent-level-6 { --pseudo-indent-level: 6; }
 
-.pseudo-panel__line + .pseudo-panel__line {
+.pseudo-panel__line + .pseudo-panel__line,
+.code-panel__line + .code-panel__line {
   margin-top: 0;
 }
 
-.pseudo-panel__line--comment {
+.pseudo-panel__line--comment,
+.code-panel__line--comment {
   color: #8c3d16;
 }
 
-.pseudo-panel__line--brace {
+.pseudo-panel__line--brace,
+.code-panel__line--brace {
   color: #234f6f;
 }
 
-.pseudo-panel__line--statement {
+.pseudo-panel__line--statement,
+.code-panel__line--statement {
   color: #0f4761;
   font-weight: 600;
 }
 
-.pseudo-panel__line a {
+.pseudo-panel__line a,
+.code-panel__line a {
   text-decoration-color: currentColor;
 }
 

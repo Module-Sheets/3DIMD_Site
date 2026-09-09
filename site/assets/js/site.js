@@ -206,26 +206,27 @@
 
       const panel = rootDocument.createElement("section");
       panel.className = "code-panel";
+      panel.dataset.codeType = "pseudo";
 
       const chrome = rootDocument.createElement("div");
-      chrome.className = "pseudo-panel__chrome";
+      chrome.className = "code-panel__chrome";
 
       const dots = rootDocument.createElement("div");
-      dots.className = "pseudo-panel__dots";
+      dots.className = "code-panel__dots";
       for (let index = 0; index < 3; index += 1) {
         const dot = rootDocument.createElement("span");
-        dot.className = "pseudo-panel__dot";
+        dot.className = "code-panel__dot";
         dots.append(dot);
       }
 
       const title = rootDocument.createElement("div");
-      title.className = "pseudo-panel__title";
+      title.className = "code-panel__title";
       title.textContent = normalizeText(startNode.textContent || "Pseudocode");
 
       chrome.append(dots, title);
 
       const body = rootDocument.createElement("div");
-      body.className = "pseudo-panel__body";
+      body.className = "code-panel__body";
       body.setAttribute("role", "region");
       body.setAttribute("aria-label", title.textContent);
 
@@ -254,7 +255,7 @@
           tone = "statement";
         }
 
-        line.className = `pseudo-panel__line pseudo-panel__line--${tone}`;
+        line.className = `code-panel__line code-panel__line--${tone}`;
         line.style.setProperty("--pseudo-indent-level", String(indentLevel));
         node.childNodes.forEach((child) => {
           line.append(child.cloneNode(true));

@@ -50,15 +50,15 @@ def build_pseudo_panel(run):
     site.js's enhancePseudoPanels output structure."""
     out = [
         '    <section class="code-panel code-panel--compact" data-code-type="code">',
-        '      <div class="pseudo-panel__chrome">',
-        '        <div class="pseudo-panel__dots">',
-        '          <span class="pseudo-panel__dot"></span>',
-        '          <span class="pseudo-panel__dot"></span>',
-        '          <span class="pseudo-panel__dot"></span>',
+        '      <div class="code-panel__chrome">',
+        '        <div class="code-panel__dots">',
+        '          <span class="code-panel__dot"></span>',
+        '          <span class="code-panel__dot"></span>',
+        '          <span class="code-panel__dot"></span>',
         '        </div>',
-        '        <div class="pseudo-panel__title">Code Example</div>',
+        '        <div class="code-panel__title">Code Example</div>',
         '      </div>',
-        '      <div class="pseudo-panel__body" role="region" aria-label="Code Example">',
+        '      <div class="code-panel__body" role="region" aria-label="Code Example">',
     ]
 
     indent_level = 0
@@ -78,7 +78,7 @@ def build_pseudo_panel(run):
             tone = "code"
 
         out.append(
-            f'        <div class="pseudo-panel__line pseudo-panel__line--{tone}" '
+            f'        <div class="code-panel__line code-panel__line--{tone}" '
             f'style="--pseudo-indent-level: {indent_level}">{text}</div>'
         )
 
