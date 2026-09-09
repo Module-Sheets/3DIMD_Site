@@ -1509,7 +1509,7 @@ body.overview-page .accordion-body strong,
   color: #fff7a8;
   text-shadow: 1px 1px 0 #000000;
   font-size: 1.3rem;
-  line-height: 1.65;
+  line-height: 1.35;
 }
 
 body.overview-page .accordion-body a,
@@ -1540,7 +1540,7 @@ body.overview-page .accordion-body .schedule-week h3 {
 body.overview-page .accordion-body .schedule-week p {
   color: #fff7a8;
   font-size: 1.15rem;
-  line-height: 1.5;
+  line-height: 1.35;
 }
 
 body.overview-page .accordion-body .schedule-deadline {

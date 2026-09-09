@@ -401,7 +401,7 @@ body.lecture-fullbleed .slide-content .accordion-body h3 {
 .slide-content .accordion-body li,
 .slide-content .accordion-body a {
   font-size: 1.25rem;
-  line-height: 1.65;
+  line-height: 1.35;
 }
 
 body.lecture-fullbleed .slide-content .accordion-body p,
@@ -621,7 +621,7 @@ body.lecture-fullbleed .slide-content .pseudo-panel * {
 
 .slide-content .schedule-week p {
   font-size: 0.95rem;
-  line-height: 1.45;
+  line-height: 1.35;
   margin: 0.2rem 0;
 }
 
@@ -633,6 +633,43 @@ body.lecture-fullbleed .slide-content .pseudo-panel * {
   font-size: 0.9rem;
   line-height: 1.35;
   color: #102a4a;
+}
+
+body.lecture-fullbleed .slide-content .schedule-subtitle {
+  color: #ffff66;
+  font-size: 1.1rem;
+}
+
+body.lecture-fullbleed .slide-content .schedule-week {
+  background: rgba(255, 255, 255, 0.08);
+  border: 2px solid #000000;
+  border-radius: var(--radius-sm);
+  box-shadow: none;
+  padding: 0.65rem 0.85rem;
+  margin: 0 0 0.65rem;
+}
+
+body.lecture-fullbleed .slide-content .schedule-week h3 {
+  color: #fff7a8;
+  font-size: 1.35rem;
+  margin: 0 0 0.25rem;
+}
+
+body.lecture-fullbleed .slide-content .schedule-week p {
+  color: #fff7a8;
+  font-size: 1.15rem;
+  line-height: 1.35;
+}
+
+body.lecture-fullbleed .slide-content .schedule-deadline {
+  background: #fcd34d;
+  color: #000000;
+  border-left: 5px solid #ff1f1f;
+  text-shadow: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+  padding: 0.45rem 0.65rem;
+  margin-top: 0.4rem;
 }
 
 /* Slide 5 neobrutalist content treatment */
