@@ -644,7 +644,7 @@ body.lecture-fullbleed .slide-content .pseudo-panel * {
 
 .neo-slide-5 .slide-content .accordion-body {
   background: linear-gradient(180deg, #0f2749 0%, #173a67 100%);
-  padding: 1rem;
+  padding: 1rem 1rem 2rem;
 }
 
 .neo-slide-5 .neo-mobile-grid {
@@ -712,11 +712,11 @@ body.lecture-fullbleed .slide-content .pseudo-panel * {
 .neo-slide-5 .neo-note {
   margin: 0.8rem 0 0;
   border: 2px solid #111111;
-  background: #f8fafc;
+  background: #123d73;
   box-shadow: 4px 4px 0 #111111;
-  color: #0f172a;
+  color: #fff7a8;
   padding: 0.45rem 0.55rem;
-  font-size: 0.88rem;
+  font-size: 1.3rem;
   line-height: 1.35;
 }
 
@@ -845,6 +845,11 @@ body.lecture-fullbleed .slide-content .pseudo-panel * {
   margin-top: 0;
 }
 
+.neo-slide-6 .neo-tech-card-content {
+  font-size: 1.3rem;
+  line-height: 1.35;
+}
+
 .neo-slide-6 .neo-tech-card-content > :last-child {
   margin-bottom: 0;
 }
@@ -878,8 +883,8 @@ body.lecture-fullbleed .slide-content .pseudo-panel * {
 .neo-slide-6 .neo-tech-card p {
   margin: 0;
   color: #ffffff;
-  font-size: 1.18rem;
-  line-height: 1.15;
+  font-size: 1.5rem;
+  line-height: 1.35;
   font-weight: 700;
 }
 
@@ -1189,6 +1194,60 @@ body.lecture-fullbleed .slide-content .pseudo-panel * {
   background: transparent;
   box-shadow: none;
   padding: 0;
+}
+
+/* Standard outer section treatment for the converted lecture sections. */
+.neo-slide-5 .slide-content .accordion,
+.neo-slide-6 .slide-content .accordion,
+.neo-slide-13 .slide-content .accordion {
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+}
+
+.neo-slide-5 .slide-content .accordion > summary,
+.neo-slide-6 .slide-content .accordion > summary,
+.neo-slide-13 .slide-content .accordion > summary {
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+  font-size: 1.4rem;
+  text-transform: none;
+}
+
+.neo-slide-5 .slide-content .accordion-body,
+.neo-slide-6 .slide-content .accordion-body,
+.neo-slide-13 .slide-content .accordion-body {
+  font-size: 1rem;
+}
+
+.neo-slide-5 .neo-mobile-card {
+  background: #123d73;
+  color: #fff7a8;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-md);
+}
+
+.neo-slide-5 .neo-mobile-card h3,
+.neo-slide-5 .neo-mobile-card p,
+.neo-slide-5 .neo-mobile-card .neo-strong {
+  color: #fff7a8;
+  font-size: 1.3rem;
+  line-height: 1.35;
+}
+
+.neo-slide-5 .neo-mobile-card .neo-step {
+  border-radius: var(--radius-sm);
+  font-size: 2rem;
+}
+
+.neo-slide-5 .slide-content,
+.neo-slide-6 .slide-content,
+.neo-slide-13 .slide-content {
+  padding-bottom: 2rem;
+}
+
+.neo-slide-5 .accordion-scroll,
+.neo-slide-6 .accordion-scroll,
+.neo-slide-13 .accordion-scroll {
+  padding-bottom: 2rem;
 }
 
 @media (max-width: 1200px) {
