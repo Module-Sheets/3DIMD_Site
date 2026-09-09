@@ -332,6 +332,7 @@
   const closeCollapsibleSections = (rootDocument) => {
     if (!rootDocument?.querySelectorAll) return;
     rootDocument.querySelectorAll("details[open]").forEach((details) => {
+      if (details.closest(".neo-slide-6")) return;
       details.open = false;
     });
   };

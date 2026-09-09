@@ -7,8 +7,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../assets/css/site.css?v=20260818a" />
-  <link rel="stylesheet" href="../assets/css/slideshow.css?v=20260818a" />
+  <link rel="stylesheet" href="../assets/css/site.css?v=20260909b" />
+  <link rel="stylesheet" href="../assets/css/slideshow.css?v=20260909b" />
 </head>
 <body class="lecture-fullbleed">
   <div class="slideshow-container">
@@ -529,7 +529,6 @@
       </div>
     </div>
 
-    <!-- Slide 6 (Reading List) -->
     <!-- Slide 5 -->
     <div class="slide">
       <div class="slide-title">3D Interactive Media Development</div>
@@ -569,32 +568,32 @@
         <div class="accordion-body">
           <div class="neo-tech-stage">
             <div class="neo-tech-row neo-tech-row-top">
-              <article class="neo-tech-card neo-tech-orange" data-topic="3DUI" role="button" tabindex="0" aria-label="Open 3DUI resources">
+              <button type="button" class="neo-tech-card neo-tech-orange" data-topic="3DUI" aria-label="Open 3DUI resources">
                 <div class="neo-tech-icon-wrap"><img src="images/slide22_image3.png" alt="3DUI icon" /></div>
                 <p>3DUI</p>
-              </article>
-              <article class="neo-tech-card neo-tech-green" data-topic="3DUI Research" role="button" tabindex="0" aria-label="Open 3DUI Research resources">
+              </button>
+              <button type="button" class="neo-tech-card neo-tech-green" data-topic="3DUI Research" aria-label="Open 3DUI Research resources">
                 <div class="neo-tech-icon-wrap"><img src="images/slide22_image3.png" alt="3DUI Research icon" /></div>
                 <p>3DUI Research</p>
-              </article>
+              </button>
             </div>
 
             <div class="neo-tech-row neo-tech-row-mid">
-              <article class="neo-tech-card neo-tech-cyan" data-topic="Blender" role="button" tabindex="0" aria-label="Open Blender resources">
+              <button type="button" class="neo-tech-card neo-tech-cyan" data-topic="Blender" aria-label="Open Blender resources">
                 <div class="neo-tech-icon-wrap"><img src="https://www.clipartmax.com/png/middle/347-3472687_blender-software-logo.png" alt="Blender icon" /></div>
                 <p>Blender</p>
-              </article>
-              <article class="neo-tech-card neo-tech-charcoal" data-topic="Unity3D" role="button" tabindex="0" aria-label="Open Unity3D resources">
+              </button>
+              <button type="button" class="neo-tech-card neo-tech-charcoal" data-topic="Unity3D" aria-label="Open Unity3D resources">
                 <div class="neo-tech-icon-wrap"><img src="images/slide22_image4.png" alt="Unity3D icon" /></div>
                 <p>Unity3D</p>
-              </article>
+              </button>
             </div>
 
             <div class="neo-tech-row neo-tech-row-bottom">
-              <article class="neo-tech-card neo-tech-charcoal neo-tech-csharp" data-topic="C#" role="button" tabindex="0" aria-label="Open C# resources">
+              <button type="button" class="neo-tech-card neo-tech-charcoal neo-tech-csharp" data-topic="C#" aria-label="Open C# resources">
                 <div class="neo-tech-icon-wrap"><img src="images/slide22_image1.png" alt="C# icon" /></div>
                 <p>C#</p>
-              </article>
+              </button>
             </div>
           </div>
         </div>
@@ -961,7 +960,7 @@
     </section>
   </div>
 
-  <script src="../assets/js/site.js?v=20260818a"></script>
+  <script src="../assets/js/site.js?v=20260909b"></script>
   <script>
     const isLecturePage = /\/lect-[^/]+\.html$/i.test(window.location.pathname);
     if (isLecturePage && document.body) {
@@ -1162,6 +1161,24 @@
         }
       });
     }
+
+    document.addEventListener('click', (event) => {
+      const card = event.target.closest('.neo-slide-6 .neo-tech-card[data-topic]');
+      const modal = document.getElementById('topic-alert-modal');
+      if (!card || !modal) return;
+
+      const topic = card.getAttribute('data-topic');
+      const title = document.getElementById('neo-topic-modal-title');
+      const content = document.getElementById('neo-topic-modal-content');
+      if (!topic || !title || !content) return;
+
+      const topicContent = buildTopicModalContent();
+      title.textContent = `${topic} Resources`;
+      content.innerHTML = topicContent[topic] || '<p>Content not available for this topic.</p>';
+      linkifyText(content);
+      modal.setAttribute('data-topic', topic);
+      modal.hidden = false;
+    });
 
     function getAccordionLabels(titleText) {
       const title = (titleText || '').toLowerCase();
@@ -1394,6 +1411,12 @@
     function showSlide(n) {
       slides.forEach(slide => slide.classList.remove('active'));
       slides[currentSlide].classList.add('active');
+
+      if (slides[currentSlide].classList.contains('neo-slide-6')) {
+        slides[currentSlide].querySelectorAll('details').forEach(details => {
+          details.open = true;
+        });
+      }
       
       // Update button states
       const allButtons = document.querySelectorAll('.slide-button');

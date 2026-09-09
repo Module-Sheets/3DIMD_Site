@@ -609,15 +609,27 @@ body.content-page .page-title {
   padding: 0.7rem 0.8rem 0.85rem;
 }
 
-.content-page-area .lecturer-entry + .lecturer-entry {
+.content-page-area .accordion-body p,
+.content-page-area .accordion-body li,
+.content-page-area .accordion-body a,
+.slide-content .accordion-body p,
+.slide-content .accordion-body li,
+.slide-content .accordion-body a {
+  line-height: 1.35;
+}
+
+.content-page-area .lecturer-entry + .lecturer-entry,
+.slide-content .lecturer-entry + .lecturer-entry {
   margin-top: 1rem;
 }
 
-.content-page-area .lecturer-details {
+.content-page-area .lecturer-details,
+.slide-content .lecturer-details {
   margin-left: 1.5rem;
 }
 
-.content-page-area .lecturer-details p {
+.content-page-area .lecturer-details p,
+.slide-content .lecturer-details p {
   margin: 0.2rem 0;
 }
 
@@ -1509,7 +1521,6 @@ body.overview-page .accordion-body strong,
   color: #fff7a8;
   text-shadow: 1px 1px 0 #000000;
   font-size: 1.3rem;
-  line-height: 1.35;
 }
 
 body.overview-page .accordion-body a,
@@ -1523,10 +1534,24 @@ body.overview-page .accordion-body .schedule-subtitle {
   font-size: 1.1rem;
 }
 
+body.lecture-fullbleed .slide-content .schedule-subtitle {
+  color: #ffff66;
+  font-size: 1.1rem;
+}
+
 body.overview-page .accordion-body .schedule-week {
   background: rgba(255, 255, 255, 0.08);
   border: 2px solid #000000;
   border-radius: var(--radius-sm);
+  padding: 0.65rem 0.85rem;
+  margin: 0 0 0.65rem;
+}
+
+body.lecture-fullbleed .slide-content .schedule-week {
+  background: rgba(255, 255, 255, 0.08);
+  border: 2px solid #000000;
+  border-radius: var(--radius-sm);
+  box-shadow: none;
   padding: 0.65rem 0.85rem;
   margin: 0 0 0.65rem;
 }
@@ -1537,13 +1562,34 @@ body.overview-page .accordion-body .schedule-week h3 {
   margin: 0 0 0.25rem;
 }
 
+body.lecture-fullbleed .slide-content .schedule-week h3 {
+  color: #fff7a8;
+  font-size: 1.35rem;
+  margin: 0 0 0.25rem;
+}
+
 body.overview-page .accordion-body .schedule-week p {
   color: #fff7a8;
   font-size: 1.15rem;
-  line-height: 1.35;
+}
+
+body.lecture-fullbleed .slide-content .schedule-week p {
+  color: #fff7a8;
+  font-size: 1.15rem;
 }
 
 body.overview-page .accordion-body .schedule-deadline {
+  background: #fcd34d;
+  color: #000000;
+  border-left: 5px solid #ff1f1f;
+  text-shadow: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+  padding: 0.45rem 0.65rem;
+  margin-top: 0.4rem;
+}
+
+body.lecture-fullbleed .slide-content .schedule-deadline {
   background: #fcd34d;
   color: #000000;
   border-left: 5px solid #ff1f1f;

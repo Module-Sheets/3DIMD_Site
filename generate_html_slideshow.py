@@ -245,8 +245,8 @@ html_template = """<!DOCTYPE html>
   <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\" />
   <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin />
   <link href=\"https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&family=Space+Grotesk:wght@500;700&display=swap\" rel=\"stylesheet\" />
-  <link rel=\"stylesheet\" href=\"../assets/css/site.css?v=20260818a" />
-    <link rel=\"stylesheet\" href=\"../assets/css/slideshow.css?v=20260818a" />
+    <link rel=\"stylesheet\" href=\"../assets/css/site.css?v=20260909b\" />
+      <link rel=\"stylesheet\" href=\"../assets/css/slideshow.css?v=20260909b\" />
 </head>
 <body class=\"__BODY_CLASS__\">
   <div class=\"slideshow-container\">
@@ -322,7 +322,7 @@ for slide in slides_data:
 
 html_template += """  </div>
 
-  <script src=\"../assets/js/site.js?v=20260818a"></script>
+  <script src=\"../assets/js/site.js?v=20260909b"></script>
   <script>
     const isLecturePage = /\\/(?:lect-[^/]+|software-required)\\.html$/i.test(window.location.pathname);
     if (isLecturePage && document.body) {
