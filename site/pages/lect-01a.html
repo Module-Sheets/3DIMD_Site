@@ -949,17 +949,6 @@
 
   </div>
 
-  <div id="topic-alert-modal" class="neo-topic-modal" hidden>
-    <div class="neo-topic-modal-backdrop" data-close-topic-modal="true"></div>
-    <section class="neo-topic-modal-panel" role="dialog" aria-modal="true" aria-labelledby="neo-topic-modal-title">
-      <header class="neo-topic-modal-header">
-        <h2 id="neo-topic-modal-title">Topic Resources</h2>
-        <button type="button" class="neo-topic-modal-close" id="neo-topic-modal-close" aria-label="Close topic dialog">Close</button>
-      </header>
-      <div class="neo-topic-modal-content" id="neo-topic-modal-content"></div>
-    </section>
-  </div>
-
   <script src="../assets/js/site.js?v=20260909b"></script>
   <script>
     const isLecturePage = /\/lect-[^/]+\.html$/i.test(window.location.pathname);
@@ -1109,76 +1098,33 @@
     }
 
     function setupSlide6TopicDialogs() {
-      const modal = document.getElementById('topic-alert-modal');
-      const modalTitle = document.getElementById('neo-topic-modal-title');
-      const modalContent = document.getElementById('neo-topic-modal-content');
-      const closeBtn = document.getElementById('neo-topic-modal-close');
       const cards = document.querySelectorAll('.neo-slide-6 .neo-tech-card[data-topic]');
 
-      if (!modal || !modalTitle || !modalContent || !cards.length) return;
+      if (!cards.length) return;
 
       const topicContent = buildTopicModalContent();
-
-      const closeModal = () => {
-        modal.hidden = true;
-        modal.removeAttribute('data-topic');
-      };
-
-      const openModal = (topic) => {
-        modal.setAttribute('data-topic', topic);
-        modalTitle.textContent = `${topic} Resources`;
-        modalContent.innerHTML = topicContent[topic] || '<p>Content not available for this topic.</p>';
-        linkifyText(modalContent);
-        modal.hidden = false;
-      };
 
       cards.forEach((card) => {
         const topic = card.getAttribute('data-topic');
         if (!topic) return;
 
-        card.addEventListener('click', () => openModal(topic));
-        card.addEventListener('keydown', (event) => {
-          if (event.key === 'Enter' || event.key === ' ') {
-            event.preventDefault();
-            openModal(topic);
-          }
-        });
-      });
+        const section = document.createElement('details');
+        section.className = card.className;
+        section.dataset.topic = topic;
 
-      modal.addEventListener('click', (event) => {
-        if (event.target && event.target.getAttribute('data-close-topic-modal') === 'true') {
-          closeModal();
-        }
-      });
+        const summary = document.createElement('summary');
+        summary.className = 'neo-tech-card-summary';
+        while (card.firstChild) summary.appendChild(card.firstChild);
 
-      if (closeBtn) {
-        closeBtn.addEventListener('click', closeModal);
-      }
+        const content = document.createElement('div');
+        content.className = 'neo-tech-card-content';
+        content.innerHTML = topicContent[topic] || '<p>Content not available for this topic.</p>';
+        linkifyText(content);
 
-      document.addEventListener('keydown', (event) => {
-        if (!modal.hidden && event.key === 'Escape') {
-          closeModal();
-        }
+        section.append(summary, content);
+        card.replaceWith(section);
       });
     }
-
-    document.addEventListener('click', (event) => {
-      const card = event.target.closest('.neo-slide-6 .neo-tech-card[data-topic]');
-      const modal = document.getElementById('topic-alert-modal');
-      if (!card || !modal) return;
-
-      const topic = card.getAttribute('data-topic');
-      const title = document.getElementById('neo-topic-modal-title');
-      const content = document.getElementById('neo-topic-modal-content');
-      if (!topic || !title || !content) return;
-
-      const topicContent = buildTopicModalContent();
-      title.textContent = `${topic} Resources`;
-      content.innerHTML = topicContent[topic] || '<p>Content not available for this topic.</p>';
-      linkifyText(content);
-      modal.setAttribute('data-topic', topic);
-      modal.hidden = false;
-    });
 
     function getAccordionLabels(titleText) {
       const title = (titleText || '').toLowerCase();
@@ -1412,12 +1358,6 @@
       slides.forEach(slide => slide.classList.remove('active'));
       slides[currentSlide].classList.add('active');
 
-      if (slides[currentSlide].classList.contains('neo-slide-6')) {
-        slides[currentSlide].querySelectorAll('details').forEach(details => {
-          details.open = true;
-        });
-      }
-      
       // Update button states
       const allButtons = document.querySelectorAll('.slide-button');
       const isFirstSlide = currentSlide === 0;
@@ -1444,9 +1384,6 @@
 
     // Keyboard navigation
     document.addEventListener('keydown', (e) => {
-      const topicModal = document.getElementById('topic-alert-modal');
-      if (topicModal && !topicModal.hidden) return;
-
       if (e.key === 'ArrowRight') changeSlide(1);
       if (e.key === 'ArrowLeft') changeSlide(-1);
     });

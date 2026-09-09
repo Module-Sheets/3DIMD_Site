@@ -792,6 +792,63 @@ body.lecture-fullbleed .slide-content .pseudo-panel * {
   transition: transform 0.14s ease, box-shadow 0.14s ease;
 }
 
+.neo-slide-6 details.neo-tech-card {
+  display: block;
+  padding: 0;
+}
+
+.neo-slide-6 .neo-tech-card-summary {
+  display: grid;
+  grid-template-columns: 1rem 76px 1fr;
+  align-items: center;
+  gap: 0.55rem;
+  min-height: 88px;
+  padding: 0.35rem 0.55rem;
+  color: #ffffff;
+  cursor: pointer;
+  list-style: none;
+}
+
+.neo-slide-6 .neo-tech-card-summary::before {
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 7px solid #111111;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  transition: transform 0.16s ease;
+}
+
+.neo-slide-6 .neo-tech-card[open] .neo-tech-card-summary::before {
+  transform: rotate(90deg);
+}
+
+.neo-slide-6 .neo-tech-card-summary::-webkit-details-marker {
+  display: none;
+}
+
+.neo-slide-6 .neo-tech-card-summary::marker {
+  content: "";
+}
+
+.neo-slide-6 .neo-tech-card-content {
+  border-top: 3px solid #111111;
+  padding: 0.8rem 0.9rem;
+  background: inherit;
+  color: #ffffff;
+  text-align: left;
+}
+
+.neo-slide-6 .neo-tech-card-content h3,
+.neo-slide-6 .neo-tech-card-content p,
+.neo-slide-6 .neo-tech-card-content ul {
+  margin-top: 0;
+}
+
+.neo-slide-6 .neo-tech-card-content > :last-child {
+  margin-bottom: 0;
+}
+
 .neo-slide-6 .neo-tech-card:hover,
 .neo-slide-6 .neo-tech-card:focus-visible {
   transform: translate(-2px, -2px);
@@ -802,7 +859,7 @@ body.lecture-fullbleed .slide-content .pseudo-panel * {
 .neo-slide-6 .neo-tech-icon-wrap {
   width: 72px;
   height: 72px;
-  border: 2px solid rgba(17, 17, 17, 0.65);
+  border: 0;
   background: rgba(255, 255, 255, 0.2);
   display: grid;
   place-items: center;
