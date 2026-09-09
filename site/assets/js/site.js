@@ -205,7 +205,7 @@
       if (!contentNodes.length) return;
 
       const panel = rootDocument.createElement("section");
-      panel.className = "pseudo-panel";
+      panel.className = "code-panel";
 
       const chrome = rootDocument.createElement("div");
       chrome.className = "pseudo-panel__chrome";

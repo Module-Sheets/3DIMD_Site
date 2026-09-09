@@ -417,7 +417,9 @@ body.lecture-fullbleed .slide-content .accordion-body a {
 }
 
 body.lecture-fullbleed .slide-content .pseudo-panel,
-body.lecture-fullbleed .slide-content .pseudo-panel * {
+body.lecture-fullbleed .slide-content .pseudo-panel *,
+body.lecture-fullbleed .slide-content .code-panel,
+body.lecture-fullbleed .slide-content .code-panel * {
   text-shadow: none;
 }
 

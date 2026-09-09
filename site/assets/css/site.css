@@ -1133,7 +1133,8 @@ body.content-page .page-title {
   margin-top: 0.2rem;
 }
 
-.pseudo-panel {
+.pseudo-panel,
+.code-panel {
   margin: 0 0 var(--space-3);
   border: 3px solid var(--line);
   border-radius: 18px;
@@ -1142,28 +1143,34 @@ body.content-page .page-title {
   overflow: hidden;
 }
 
-.pseudo-panel--compact {
+.pseudo-panel--compact,
+.code-panel--compact {
   margin: 0 0 var(--space-2);
 }
 
-.pseudo-panel--compact .pseudo-panel__chrome {
+.pseudo-panel--compact .pseudo-panel__chrome,
+.code-panel--compact .pseudo-panel__chrome {
   padding: 0.55rem 0.75rem;
 }
 
-.pseudo-panel--compact .pseudo-panel__title {
+.pseudo-panel--compact .pseudo-panel__title,
+.code-panel--compact .pseudo-panel__title {
   font-size: 0.8rem;
 }
 
-.pseudo-panel--compact .pseudo-panel__body {
+.pseudo-panel--compact .pseudo-panel__body,
+.code-panel--compact .pseudo-panel__body {
   padding: 0.7rem 0.8rem 0.8rem;
 }
 
-.pseudo-panel--compact .pseudo-panel__line {
+.pseudo-panel--compact .pseudo-panel__line,
+.code-panel--compact .pseudo-panel__line {
   font-size: 0.9rem;
   line-height: 1.25;
 }
 
-.pseudo-panel__chrome {
+.pseudo-panel__chrome,
+.code-panel__chrome {
   display: flex;
   align-items: center;
   gap: 0.75rem;
@@ -1172,13 +1179,15 @@ body.content-page .page-title {
   background: linear-gradient(90deg, #ffe066 0%, #ffc53d 100%);
 }
 
-.pseudo-panel__dots {
+.pseudo-panel__dots,
+.code-panel__dots {
   display: inline-flex;
   gap: 0.35rem;
   flex: 0 0 auto;
 }
 
-.pseudo-panel__dot {
+.pseudo-panel__dot,
+.code-panel__dot {
   width: 0.78rem;
   height: 0.78rem;
   border-radius: 999px;
@@ -1186,15 +1195,18 @@ body.content-page .page-title {
   background: #ffffff;
 }
 
-.pseudo-panel__dot:nth-child(2) {
+.pseudo-panel__dot:nth-child(2),
+.code-panel__dot:nth-child(2) {
   background: #ff8a5b;
 }
 
-.pseudo-panel__dot:nth-child(3) {
+.pseudo-panel__dot:nth-child(3),
+.code-panel__dot:nth-child(3) {
   background: #6fd3ff;
 }
 
-.pseudo-panel__title {
+.pseudo-panel__title,
+.code-panel__title {
   min-width: 0;
   color: #000000;
   text-shadow: none;
@@ -1204,7 +1216,8 @@ body.content-page .page-title {
   text-transform: uppercase;
 }
 
-.pseudo-panel__body {
+.pseudo-panel__body,
+.code-panel__body {
   --pseudo-indent-step: 1.35rem;
   overflow-x: auto;
   padding: 0.95rem 1rem 1.05rem;
@@ -1215,12 +1228,15 @@ body.content-page .page-title {
 }
 
 .pseudo-panel__body pre,
-.pseudo-panel__body code {
+.pseudo-panel__body code,
+.code-panel__body pre,
+.code-panel__body code {
   margin: 0;
   line-height: 1.2;
 }
 
-.pseudo-panel__line {
+.pseudo-panel__line,
+.code-panel__line {
   min-width: max-content;
   padding-left: calc(var(--pseudo-indent-level, 0) * var(--pseudo-indent-step));
   color: #161616;

@@ -46,10 +46,10 @@ def is_code(text: str) -> bool:
 
 
 def build_pseudo_panel(run):
-    """Render `run` (list of raw line texts) as a .pseudo-panel matching
+    """Render `run` (list of raw line texts) as a .code-panel matching
     site.js's enhancePseudoPanels output structure."""
     out = [
-        '    <section class="pseudo-panel pseudo-panel--compact">',
+        '    <section class="code-panel code-panel--compact" data-code-type="code">',
         '      <div class="pseudo-panel__chrome">',
         '        <div class="pseudo-panel__dots">',
         '          <span class="pseudo-panel__dot"></span>',
