@@ -186,7 +186,7 @@
     if (!rootDocument?.querySelectorAll) return;
 
     const pseudoStarts = Array.from(rootDocument.querySelectorAll("h2, h3, p"))
-      .filter((node) => isPseudoStart(node) && !node.closest(".pseudo-panel"));
+      .filter((node) => isPseudoStart(node) && !node.closest(".pseudo-panel, .code-panel"));
 
     pseudoStarts.forEach((startNode) => {
       const parent = startNode.parentElement;
