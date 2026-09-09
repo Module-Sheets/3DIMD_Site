@@ -329,6 +329,13 @@
     return noPrefix.split("?")[0].split("#")[0];
   };
 
+  const closeCollapsibleSections = (rootDocument) => {
+    if (!rootDocument?.querySelectorAll) return;
+    rootDocument.querySelectorAll("details[open]").forEach((details) => {
+      details.open = false;
+    });
+  };
+
   const isLecturePageKey = (pageKey) => /^pages\/lect-[^/]+\.html$/i.test(normalizePageKey(pageKey || ""));
   const isTutorialPageKey = (pageKey) => /^pages\/tut-[^/]+\.html$/i.test(normalizePageKey(pageKey || ""));
   const isOverviewPageKey = (pageKey) => /^pages\/overview-[^/]+\.html$/i.test(normalizePageKey(pageKey || ""));
@@ -835,6 +842,8 @@
         rootDocument.body.classList.toggle("overview-page", isOverviewPageKey(currentSourcePageKey));
       }
 
+      closeCollapsibleSections(rootDocument);
+
       if (currentOverviewTarget) {
         const targetText = normalizeText(currentOverviewTarget).toLowerCase();
         const targetSummary = Array.from(rootDocument.querySelectorAll("details > summary"))
@@ -935,6 +944,7 @@
   }
 
   restoreNavScroll();
+  closeCollapsibleSections(document);
   enhancePseudoPanels(document);
   enableVideoPlaceholders(document);
   enableImageExpand(document);
