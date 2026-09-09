@@ -145,11 +145,12 @@ Section-title rule:
 
 Step 2 — Polish pass (produces the final lect-01a/01b visual/interaction style):
 1. `python wrap_code_blocks.py site/pages/<id>.html` — detects contiguous C#/code
-   paragraphs and replaces each run inline with a hand-authored `.pseudo-panel`
-   (matching the tutorial pseudocode panel styling exactly: chrome with dots/title,
-   monospace body, comment/brace/statement/code tone coloring, indent tracking on
-   `{`/`}`). The panel is NOT wrapped in its own collapsible `<details>` — it renders
-   directly in place so the code is always visible without an extra click.
+   paragraphs and replaces each run inline with a `.code-panel`
+   (`data-code-type="code"`), matching the tutorial pseudocode panel styling exactly:
+   chrome with dots/title, monospace body, comment/brace/statement/code tone coloring,
+   and indent tracking on `{`/`}`. The panel is NOT wrapped in its own collapsible
+   `<details>` — it renders directly in place so the code is always visible without an
+   extra click.
 2. `python accordionize_lecture.py site/pages/<id>.html` — groups each slide's
    content into collapsible `<details class="accordion">` sections keyed by that
    slide's own `<h2>`/`<h3>` headings (used verbatim as `<summary>` labels, minus

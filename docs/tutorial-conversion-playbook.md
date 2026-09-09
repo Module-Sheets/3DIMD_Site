@@ -142,7 +142,8 @@ Report PASS/FAIL for each:
 4. No raw unembedded video links where embedding is required.
 5. No raw media cards outside nested video wrappers.
 6. No pre/code or markdown-fence pseudo-code blocks.
-7. Pseudo-code style matches canonical line-by-line format.
+7. Pseudo-code uses the canonical inline `.code-panel` format with
+	`data-code-type="pseudo"` and matches the approved line-by-line styling.
 7a. Pseudo-code panels are not wrapped in a collapsible details/summary accordion.
 8. No duplicate media links blocks.
 9. No unnecessary wrapper sections.

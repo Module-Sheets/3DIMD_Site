@@ -87,9 +87,14 @@ Forbidden structure patterns:
 1. Reuse existing tutorial component classes before adding new classes.
 2. Keep new styles scoped and minimal when required.
 
-### 5.2 Pseudo-Panel Rendering
-1. Pseudo-panel line rendering must collapse formatting whitespace for tight tutorial readability.
-2. Do not use preformatted whitespace rules that break pseudo-code visual style.
+### 5.2 Code-Panel Rendering
+1. Use `.code-panel` with `data-code-type="pseudo"` for pseudo-code and
+   `data-code-type="code"` for source code; both use the same approved panel styling.
+2. Code-panel line rendering must collapse formatting whitespace for tight tutorial
+   readability. Do not use preformatted whitespace rules that break pseudo-code visual
+   style.
+3. Legacy `.pseudo-panel*` class names are compatibility aliases and must not be used
+   in new or converted content.
 
 ### 5.3 Readability and Spacing
 1. Maintain consistent indentation and nested readability in markup.

@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../assets/css/site.css?v=20260818a" />
+  <link rel="stylesheet" href="../assets/css/site.css?v=20260909b" />
 </head>
 <body class="content-page">
   <main class="content-area content-page-area" id="main-content">
@@ -64,19 +64,19 @@
           <li>The public text string collects the live information on the position and rotation of the object it is on and puts it in the string format -showing R for rotation, and the data entries 3-5, with Float depth of 2 decimal places (F2). Position display is shown, but commented out - you can change this for cubes that have position below.</li>
           <li>Try the Lecture code for input of rotation by key as well:</li>
         </ol>
-        <div class="pseudo-panel pseudo-panel--compact">
-          <div class="pseudo-panel__chrome">
-            <div class="pseudo-panel__dots">
-              <span class="pseudo-panel__dot"></span>
-              <span class="pseudo-panel__dot"></span>
-              <span class="pseudo-panel__dot"></span>
+        <div class="code-panel code-panel--compact" data-code-type="pseudo">
+          <div class="code-panel__chrome">
+            <div class="code-panel__dots">
+              <span class="code-panel__dot"></span>
+              <span class="code-panel__dot"></span>
+              <span class="code-panel__dot"></span>
             </div>
-            <div class="pseudo-panel__title">pseudo-code</div>
+            <div class="code-panel__title">pseudo-code</div>
           </div>
-          <div class="pseudo-panel__body">
-            <div class="pseudo-panel__line pseudo-panel__line--statement">if(Input.GetKey(KeyCode.A)){</div>
-            <div class="pseudo-panel__line">this.cube1.transform.Rotate(new Vector3(0,1,0), 1);</div>
-            <div class="pseudo-panel__line pseudo-panel__line--brace">}</div>
+          <div class="code-panel__body">
+            <div class="code-panel__line code-panel__line--statement">if(Input.GetKey(KeyCode.A)){</div>
+            <div class="code-panel__line">this.cube1.transform.Rotate(new Vector3(0,1,0), 1);</div>
+            <div class="code-panel__line code-panel__line--brace">}</div>
           </div>
         </div>
         <h3>Extras</h3>
@@ -163,37 +163,37 @@
           <li>Add Component/Script</li>
           <li>Create Text -uiText- and -score- variables</li>
         </ol>
-        <div class="pseudo-panel pseudo-panel--compact">
-          <div class="pseudo-panel__chrome">
-            <div class="pseudo-panel__dots">
-              <span class="pseudo-panel__dot"></span>
-              <span class="pseudo-panel__dot"></span>
-              <span class="pseudo-panel__dot"></span>
+        <div class="code-panel code-panel--compact" data-code-type="pseudo">
+          <div class="code-panel__chrome">
+            <div class="code-panel__dots">
+              <span class="code-panel__dot"></span>
+              <span class="code-panel__dot"></span>
+              <span class="code-panel__dot"></span>
             </div>
-            <div class="pseudo-panel__title">pseudo-code</div>
+            <div class="code-panel__title">pseudo-code</div>
           </div>
-          <div class="pseudo-panel__body">
-            <div class="pseudo-panel__line">private Text uiText;</div>
-            <div class="pseudo-panel__line">private long score = 0;</div>
+          <div class="code-panel__body">
+            <div class="code-panel__line">private Text uiText;</div>
+            <div class="code-panel__line">private long score = 0;</div>
           </div>
         </div>
         <ol>
           <li>In Start - uiText = GetComponent&lt;Text&gt;();</li>
         </ol>
-        <div class="pseudo-panel pseudo-panel--compact">
-          <div class="pseudo-panel__chrome">
-            <div class="pseudo-panel__dots">
-              <span class="pseudo-panel__dot"></span>
-              <span class="pseudo-panel__dot"></span>
-              <span class="pseudo-panel__dot"></span>
+        <div class="code-panel code-panel--compact" data-code-type="pseudo">
+          <div class="code-panel__chrome">
+            <div class="code-panel__dots">
+              <span class="code-panel__dot"></span>
+              <span class="code-panel__dot"></span>
+              <span class="code-panel__dot"></span>
             </div>
-            <div class="pseudo-panel__title">pseudo-code</div>
+            <div class="code-panel__title">pseudo-code</div>
           </div>
-          <div class="pseudo-panel__body">
-            <div class="pseudo-panel__line pseudo-panel__line--statement">void Start () {</div>
-            <div class="pseudo-panel__line">uiText = this.GetComponent&lt;Text&gt;();</div>
-            <div class="pseudo-panel__line">updateScoreCounter();</div>
-            <div class="pseudo-panel__line pseudo-panel__line--brace">}</div>
+          <div class="code-panel__body">
+            <div class="code-panel__line code-panel__line--statement">void Start () {</div>
+            <div class="code-panel__line">uiText = this.GetComponent&lt;Text&gt;();</div>
+            <div class="code-panel__line">updateScoreCounter();</div>
+            <div class="code-panel__line code-panel__line--brace">}</div>
           </div>
         </div>
         <ol>
@@ -207,19 +207,19 @@
             </ol>
           </li>
         </ol>
-        <div class="pseudo-panel pseudo-panel--compact">
-          <div class="pseudo-panel__chrome">
-            <div class="pseudo-panel__dots">
-              <span class="pseudo-panel__dot"></span>
-              <span class="pseudo-panel__dot"></span>
-              <span class="pseudo-panel__dot"></span>
+        <div class="code-panel code-panel--compact" data-code-type="pseudo">
+          <div class="code-panel__chrome">
+            <div class="code-panel__dots">
+              <span class="code-panel__dot"></span>
+              <span class="code-panel__dot"></span>
+              <span class="code-panel__dot"></span>
             </div>
-            <div class="pseudo-panel__title">pseudo-code</div>
+            <div class="code-panel__title">pseudo-code</div>
           </div>
-          <div class="pseudo-panel__body">
-            <div class="pseudo-panel__line pseudo-panel__line--statement">private void updateScoreCounter(){</div>
-            <div class="pseudo-panel__line">uiText.text = &quot;&lt;color=blue&gt;Score&lt;/color&gt;: &quot; + score;</div>
-            <div class="pseudo-panel__line pseudo-panel__line--brace">}</div>
+          <div class="code-panel__body">
+            <div class="code-panel__line code-panel__line--statement">private void updateScoreCounter(){</div>
+            <div class="code-panel__line">uiText.text = &quot;&lt;color=blue&gt;Score&lt;/color&gt;: &quot; + score;</div>
+            <div class="code-panel__line code-panel__line--brace">}</div>
           </div>
         </div>
       </div>
@@ -465,7 +465,7 @@
 </div>
 </details>
 </main>
-  <script src="../assets/js/site.js?v=20260818a"></script>
+  <script src="../assets/js/site.js?v=20260909b"></script>
 </body>
 </html>
 
