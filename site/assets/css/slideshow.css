@@ -636,7 +636,7 @@ body.lecture-fullbleed .slide-content .pseudo-panel * {
   color: #f8fafc;
   border-bottom: 3px solid #111111;
   border-radius: 0;
-  padding: 0.7rem 0.9rem;
+  padding: 0.9rem 1rem;
   font-size: 1.1rem;
   text-transform: uppercase;
   letter-spacing: 0.03em;
@@ -645,6 +645,10 @@ body.lecture-fullbleed .slide-content .pseudo-panel * {
 .neo-slide-5 .slide-content .accordion-body {
   background: linear-gradient(180deg, #0f2749 0%, #173a67 100%);
   padding: 1rem 1rem 2rem;
+}
+
+.neo-slide-5 .accordion-scroll > .accordion {
+  margin-bottom: 0.7rem;
 }
 
 .neo-slide-5 .neo-mobile-grid {
