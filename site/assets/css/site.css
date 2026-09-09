@@ -609,6 +609,18 @@ body.content-page .page-title {
   padding: 0.7rem 0.8rem 0.85rem;
 }
 
+.content-page-area .lecturer-entry + .lecturer-entry {
+  margin-top: 1rem;
+}
+
+.content-page-area .lecturer-details {
+  margin-left: 1.5rem;
+}
+
+.content-page-area .lecturer-details p {
+  margin: 0.2rem 0;
+}
+
 .section-card {
   background: var(--surface);
   border: 3px solid var(--line);
@@ -1490,7 +1502,6 @@ body.overview-page .accordion-body p,
 body.overview-page .accordion-body li,
 body.overview-page .accordion-body a,
 body.overview-page .accordion-body strong,
-body.overview-page .accordion-body div,
 .content-shell--overview iframe.content-frame .accordion-body p,
 .content-shell--overview iframe.content-frame .accordion-body li,
 .content-shell--overview iframe.content-frame .accordion-body a,
