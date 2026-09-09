@@ -651,6 +651,18 @@ body.lecture-fullbleed .slide-content .pseudo-panel * {
   margin-bottom: 0.7rem;
 }
 
+.neo-slide-5 .slide-content .accordion:not([open]) > .accordion-body {
+  display: none;
+}
+
+.neo-slide-5 .slide-content .accordion:not([open]) {
+  overflow: hidden;
+}
+
+.neo-slide-5 .slide-content .accordion:not([open]) > summary {
+  border-radius: var(--radius-md);
+}
+
 .neo-slide-5 .neo-mobile-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
