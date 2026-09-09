@@ -609,6 +609,31 @@ body.content-page .page-title {
   padding: 0.7rem 0.8rem 0.85rem;
 }
 
+.code-example > p:first-child {
+  margin: 0 0 0.65rem;
+  color: #fff7a8;
+  font-weight: 700;
+}
+
+.code-example pre {
+  margin: 0;
+  padding: 0.9rem 1rem;
+  overflow-x: auto;
+  border: 3px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: #102a4a;
+  color: #fff7a8;
+  box-shadow: var(--shadow-md);
+  font-family: "IBM Plex Mono", "Cascadia Code", "Consolas", monospace;
+  font-size: 1rem;
+  line-height: 1.35;
+  white-space: pre;
+}
+
+.code-example code {
+  font: inherit;
+}
+
 .content-page-area .accordion-body p,
 .content-page-area .accordion-body li,
 .content-page-area .accordion-body a,
